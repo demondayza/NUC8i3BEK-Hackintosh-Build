@@ -55,10 +55,9 @@ Then change:
 
 ## Preparation USB
 1) Plug in your USB at least 8gb in your apple computer and open terminal
-2) Type in ''''diskutil list''' and find your USB and take note of the disk number
-3) Type in '''diskutil partitionDisk /dev/disk2 2 MBR FAT32 "CLOVER EFI" 200Mi HFS+J "install_osx" R
-''' BUT CHANGE '/dev/disk2' to the correct number.
-5) You should now have two partitions called 'CLOVER EFI' and 'install_osx'
+2) Type in `diskutil list` and find your USB and take note of the disk number
+3) Type in `diskutil partitionDisk /dev/disk2 2 MBR FAT32 "CLOVER EFI" 200Mi HFS+J "install_osx" R` BUT CHANGE `/dev/disk2` to the correct number.
+5) You should now have two partitions called `CLOVER EFI` and `install_osx`
 6) Download the EFI folder from above and copy the contents into the CLOVER EFI
 7) Download MacOS Mojave from the App Store [Link To Mojave](https://apps.apple.com/us/app/macos-mojave/id1398502828?ls=1&mt=12)
 8) Once downloaded copy the MacOS Mojave file, (Found in applications folder) to install_oxc
