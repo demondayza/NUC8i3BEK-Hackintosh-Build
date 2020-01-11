@@ -16,7 +16,7 @@ This guide will walk you through the process of creating a hackintosh, on a Inte
 I brought a bundle package which cost me a total of $510 for everything.  [Link To Bundle](https://www.ple.com.au/Products/634228/Intel-i3-NUC-Bean-Canyon-Super-Starter-Bundle)
 
 ## Setup
-The intel nuc comes with a vesa mount which i mounted onto my monitor which makes it compact and hidden. I am using a ethernet cable connected to my main PC which allows me to get internet.
+The Intel Nuc comes with a vesa mount which i mounted onto my monitor which makes it compact and hidden. I am using a ethernet cable connected to my main PC which allows me to get internet.
 
 ## Works
 - All USB 3.1 Gen Ports
@@ -64,4 +64,23 @@ Then change:
 9) Eject USB and your done.
 
 ## Installation
+1) Plug the USB in one of the 2 front USB prots
+2) The clover bootloader screen will show up and you must press space bar on `install_osx` and select verbose boot (This is print out any errors that happen) and click enter on boot with selected options.
+3) The system will reboot and you should now see two boot options one being `install_osx` and the other being `Boot MacOS Install From ...` you must go to the settings in clover and change the FakeID to 0x12345678 `Clover Options-> Graphics Injector-> FakeID` and then select `Boot MacOS Install From..` and press enter
+4) The MacOS Install screen should pop up you will need to run through the installation and install MacOS to your SSD, once that is done the computer will restart
+5) The clover bootloader screen will show up again, select `Boot OS X from (YourPartition)` "YourPartition" will be named depending on what you chose in Disk Utility
+6) You should end up at the OS X desktop
+
+## Post Installation
+You will need to mount your EFI and copy over your EFI config files from your USB
+1) Open Terminal and run `diskutil list` and find your internal storage device and the number of your EFI partition
+2) Run `mkdir /Volumes/efi`
+3) Mount your EFI `sudo mount -t msdos /dev/disk0s1 /Volumes/efi` (Make sure to replace /dev/disk0s1 to what ever your EFI partition is mount to.)
+4) Your EFI should now be mounted and should be on desktop, next you must open the CLOVER EFI and copy over the contents to the EFI.
+5) Now you can unplug your USB and you will be able to boot without your USB.
+
+## WIFI Work Around
+My WIFI work around involves have another computer close by and an ethernet cable, I connected my Intel Nuc to my other computer running windows (note OS doesn't matter and can be achieved with any OS just a different process). You must then go into the network adaptor settings and find your WIFI connected, you must right click and press properties and on shared, you must enable both setting and under `Home networking connection` select your ethernet adaptor connected to your Intel Nuc. And you should now have internet going to your Intel Nuc
+
+
 
