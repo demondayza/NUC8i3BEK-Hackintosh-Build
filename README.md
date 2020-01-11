@@ -58,14 +58,14 @@ Then change:
 2) Type in `diskutil list` and find your USB and take note of the disk number
 3) Type in `diskutil partitionDisk /dev/disk2 2 MBR FAT32 "CLOVER EFI" 200Mi HFS+J "install_osx" R` BUT CHANGE `/dev/disk2` to the correct number.
 5) You should now have two partitions called `CLOVER EFI` and `install_osx`
-6) Download the EFI folder from above and copy the contents into the CLOVER EFI
+6) Download the EFI folder [Files](https://gofile.io/?c=ZR9tWu) and copy the contents into the CLOVER EFI
 7) Download MacOS Mojave from the App Store [Link To Mojave](https://apps.apple.com/us/app/macos-mojave/id1398502828?ls=1&mt=12)
-8) Once downloaded copy the MacOS Mojave file, (Found in applications folder) to install_oxc
+8) Once downloaded copy the MacOS Mojave file, (Found in applications folder) to install_osx
 9) Eject USB and your done.
 
 ## Installation
 1) Plug the USB in one of the 2 front USB prots
-2) The clover bootloader screen will show up and you must press space bar on `install_osx` and select verbose boot (This is print out any errors that happen) and click enter on boot with selected options.
+2) The clover bootloader screen will show up and you must press space bar on `install_osx` and select verbose boot (This will print out any errors that happen) and click enter on boot with selected options.
 3) The system will reboot and you should now see two boot options one being `install_osx` and the other being `Boot MacOS Install From ...` you must go to the settings in clover and change the FakeID to 0x12345678 `Clover Options-> Graphics Injector-> FakeID` and then select `Boot MacOS Install From..` and press enter
 4) The MacOS Install screen should pop up you will need to run through the installation and install MacOS to your SSD, once that is done the computer will restart
 5) The clover bootloader screen will show up again, select `Boot OS X from (YourPartition)` "YourPartition" will be named depending on what you chose in Disk Utility
@@ -76,7 +76,7 @@ You will need to mount your EFI and copy over your EFI config files from your US
 1) Open Terminal and run `diskutil list` and find your internal storage device and the number of your EFI partition
 2) Run `mkdir /Volumes/efi`
 3) Mount your EFI `sudo mount -t msdos /dev/disk0s1 /Volumes/efi` (Make sure to replace /dev/disk0s1 to what ever your EFI partition is mount to.)
-4) Your EFI should now be mounted and should be on desktop, next you must open the CLOVER EFI and copy over the contents to the EFI.
+4) Your EFI should now be mounted and should be on desktop, next you must open the CLOVER EFI and go into EFI and copy over the contents to the EFI.
 5) Now you can unplug your USB and you will be able to boot without your USB.
 
 ## WIFI Work Around
