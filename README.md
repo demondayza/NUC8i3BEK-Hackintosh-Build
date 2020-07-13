@@ -13,7 +13,7 @@ This guide will walk you through the process of creating a hackintosh, on a Inte
 - GPU: Intel Iris Plus Graphics 655
 - RAM: 8x1 GB 2400MHz
 - Storage: 240GB M.2 SSD
-I brought a bundle package which cost me a total of $510 for everything.  [Link To Bundle](https://www.ple.com.au/Products/634228/Intel-i3-NUC-Bean-Canyon-Super-Starter-Bundle)
+I brought a bundle package which cost me a total of $510 for everything.  [Link To Bundle](https://www.ple.com.au/Products/641565/Intel-10th-Gen-i5-NUC-DIY-Starter-Bundle) [This bundle is slightly different]
 
 ## Setup
 The Intel Nuc comes with a vesa mount which i mounted onto my monitor which makes it compact and hidden. I am using a ethernet cable connected to my main PC which allows me to get internet.
@@ -58,7 +58,7 @@ Then change:
 2) Type in `diskutil list` and find your USB and take note of the disk number
 3) Type in `diskutil partitionDisk /dev/disk2 2 MBR FAT32 "CLOVER EFI" 200Mi HFS+J "install_osx" R` BUT CHANGE `/dev/disk2` to the correct number.
 5) You should now have two partitions called `CLOVER EFI` and `install_osx`
-6) Download the EFI folder [Files](https://gofile.io/?c=ZR9tWu) and copy the contents into the CLOVER EFI
+6) Download the EFI folder [Files](https://www.mediafire.com/file/6gjpxoqjvnu7ts4/EFI.rar/file) and copy the contents into the CLOVER EFI
 7) Download MacOS Mojave from the App Store [Link To Mojave](https://apps.apple.com/us/app/macos-mojave/id1398502828?ls=1&mt=12)
 8) Once downloaded copy the MacOS Mojave file, (Found in applications folder) to install_osx
 9) Eject USB and your done.
